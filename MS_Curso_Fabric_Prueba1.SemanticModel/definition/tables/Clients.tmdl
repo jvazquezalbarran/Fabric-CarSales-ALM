@@ -1,0 +1,132 @@
+table Clients
+	lineageTag: a68f3ca0-117a-4f4d-a662-72e09e6d172f
+	sourceLineageTag: [dbo].[Clients]
+
+	column ClientID
+		dataType: int64
+		formatString: 0
+		lineageTag: 77838204-73ba-4568-b3bb-65908c445b77
+		sourceLineageTag: ClientID
+		summarizeBy: none
+		sourceColumn: ClientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientName
+		dataType: string
+		lineageTag: 6841d616-757c-48ad-8cec-7bab53d9d75a
+		sourceLineageTag: ClientName
+		summarizeBy: none
+		sourceColumn: ClientName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address1
+		dataType: string
+		lineageTag: 05f40911-7942-496f-8531-d85ec34c322f
+		sourceLineageTag: Address1
+		summarizeBy: none
+		sourceColumn: Address1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address2
+		dataType: string
+		lineageTag: 9bc7277a-9a0c-4b2d-a7fb-19c1345945d8
+		sourceLineageTag: Address2
+		summarizeBy: none
+		sourceColumn: Address2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Town
+		dataType: string
+		lineageTag: b39649b9-fac8-4dc9-a922-ed54e37e18ed
+		sourceLineageTag: Town
+		summarizeBy: none
+		sourceColumn: Town
+
+		annotation SummarizationSetBy = Automatic
+
+	column County
+		dataType: string
+		lineageTag: 477c30b7-7ab4-4e92-b9cf-7c83542da54f
+		sourceLineageTag: County
+		summarizeBy: none
+		sourceColumn: County
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: b83a88a3-a242-4b63-97ae-7d567694bc95
+		sourceLineageTag: Region
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column OuterPostode
+		dataType: string
+		lineageTag: fcac0abb-66c9-4c13-a87c-daa70122aa21
+		sourceLineageTag: OuterPostode
+		summarizeBy: none
+		sourceColumn: OuterPostode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryID
+		dataType: int64
+		formatString: 0
+		lineageTag: 70a006af-695d-44f6-8433-8f32e170c55f
+		sourceLineageTag: CountryID
+		summarizeBy: none
+		sourceColumn: CountryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientType
+		dataType: string
+		lineageTag: 613406d8-20ad-4291-8851-4b93e563e57c
+		sourceLineageTag: ClientType
+		summarizeBy: none
+		sourceColumn: ClientType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientSize
+		dataType: string
+		lineageTag: 19e208a1-073e-4dea-8f89-e4e7e9a81959
+		sourceLineageTag: ClientSize
+		summarizeBy: none
+		sourceColumn: ClientSize
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCreditWorthy
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f418ad2-174f-4fa4-a150-665619cd2e2a
+		sourceLineageTag: IsCreditWorthy
+		summarizeBy: sum
+		sourceColumn: IsCreditWorthy
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDealer
+		dataType: int64
+		formatString: 0
+		lineageTag: dedc9c28-61d3-4d82-a7bb-c1d345366600
+		sourceLineageTag: IsDealer
+		summarizeBy: sum
+		sourceColumn: IsDealer
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Clients = entity
+		mode: directLake
+		source
+			entityName: Clients
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_Fabric_Curso_Prueba_JVA'
+

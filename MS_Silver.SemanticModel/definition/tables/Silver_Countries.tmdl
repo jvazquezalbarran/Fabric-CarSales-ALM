@@ -1,0 +1,39 @@
+table Silver_Countries
+	lineageTag: 436a5190-07dd-47d1-8bf5-a4266235c3ce
+	sourceLineageTag: [dbo].[Silver_Countries]
+
+	column CountryID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e0935eb-1112-4cb9-8d69-c4b892793d05
+		sourceLineageTag: CountryID
+		summarizeBy: count
+		sourceColumn: CountryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryName
+		dataType: string
+		lineageTag: 14589335-3d43-4c2b-a722-67b4ff7c2227
+		sourceLineageTag: CountryName
+		summarizeBy: none
+		sourceColumn: CountryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryISOCode
+		dataType: string
+		lineageTag: 06dcf462-246a-49fa-8054-ed01e710c43b
+		sourceLineageTag: CountryISOCode
+		summarizeBy: none
+		sourceColumn: CountryISOCode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Silver_Countries = entity
+		mode: directLake
+		source
+			entityName: Silver_Countries
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_Fabric_Curso_Prueba_JVA'
+

@@ -1,0 +1,172 @@
+table DateDimension
+	lineageTag: 46721c5b-5ea4-448f-a1da-682252de3b66
+	sourceLineageTag: [dbo].[DateDimension]
+
+	column DateKey
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 308d2f9d-2bc6-4d13-975b-5c12728eb05f
+		sourceLineageTag: DateKey
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ddd7687-c848-4bb0-b289-8bad28cf1ac1
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 335ca85c-66ea-42c1-b4a0-4063372b6d70
+		sourceLineageTag: MonthNum
+		summarizeBy: sum
+		sourceColumn: MonthNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthFull
+		dataType: string
+		lineageTag: 52bf2807-d200-4661-ac55-ed50fb25a31e
+		sourceLineageTag: MonthFull
+		summarizeBy: none
+		sourceColumn: MonthFull
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthAbbr
+		dataType: string
+		lineageTag: cadc4673-e5ae-42da-a060-423859b3e0bf
+		sourceLineageTag: MonthAbbr
+		summarizeBy: none
+		sourceColumn: MonthAbbr
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterNum
+		dataType: int64
+		formatString: 0
+		lineageTag: ef6ecf66-d498-4a4e-b76f-26bfe1ead097
+		sourceLineageTag: QuarterNum
+		summarizeBy: sum
+		sourceColumn: QuarterNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterFull
+		dataType: string
+		lineageTag: 93bde2ac-6168-4e30-8f98-5bbdc305d926
+		sourceLineageTag: QuarterFull
+		summarizeBy: none
+		sourceColumn: QuarterFull
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterAbbr
+		dataType: string
+		lineageTag: 8391cd6a-ae78-4aa7-8b38-baf7d48f4b62
+		sourceLineageTag: QuarterAbbr
+		summarizeBy: none
+		sourceColumn: QuarterAbbr
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearAndQuarterNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 693628f0-a28c-4082-ac85-e2d72ac53f10
+		sourceLineageTag: YearAndQuarterNum
+		summarizeBy: sum
+		sourceColumn: YearAndQuarterNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterAbbrAndYear
+		dataType: string
+		lineageTag: 6a916dca-77f6-4c32-934a-aef4d0fa1801
+		sourceLineageTag: QuarterAbbrAndYear
+		summarizeBy: none
+		sourceColumn: QuarterAbbrAndYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthAbbrAndYear
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 08a06607-81cb-4b00-b7c8-4762f9d5db35
+		sourceLineageTag: MonthAbbrAndYear
+		summarizeBy: none
+		sourceColumn: MonthAbbrAndYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthAndYear
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f51372cc-79d4-4282-ab43-4e41bbbf03a2
+		sourceLineageTag: MonthAndYear
+		summarizeBy: none
+		sourceColumn: MonthAndYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		lineageTag: 6284480a-8b39-405f-854d-55ebc6962a6d
+		sourceLineageTag: MonthName
+		summarizeBy: none
+		sourceColumn: MonthName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNameAbbr
+		dataType: string
+		lineageTag: 1d61b2b7-f407-460a-9664-c22cd1a3823c
+		sourceLineageTag: MonthNameAbbr
+		summarizeBy: none
+		sourceColumn: MonthNameAbbr
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterAndYear
+		dataType: string
+		lineageTag: 2557b24e-42fc-4974-b20f-5977521d49ce
+		sourceLineageTag: QuarterAndYear
+		summarizeBy: none
+		sourceColumn: QuarterAndYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterAndYearAbbr2
+		dataType: string
+		lineageTag: 39944cb5-e037-4731-8fae-72ddbfe68719
+		sourceLineageTag: QuarterAndYearAbbr2
+		summarizeBy: none
+		sourceColumn: QuarterAndYearAbbr2
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearAndMonthNum
+		dataType: int64
+		formatString: 0
+		lineageTag: a73a79b2-f564-485a-b2f9-3492d6504392
+		sourceLineageTag: YearAndMonthNum
+		summarizeBy: sum
+		sourceColumn: YearAndMonthNum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DateDimension = entity
+		mode: directLake
+		source
+			entityName: DateDimension
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_Fabric_Curso_Prueba_JVA'
+

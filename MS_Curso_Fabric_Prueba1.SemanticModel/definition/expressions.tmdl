@@ -1,0 +1,9 @@
+expression 'DirectLake - LH_Fabric_Curso_Prueba_JVA' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/7a550828-440d-4737-8629-60b8018cc24e/e08a24b9-cb18-4405-b06b-b4cf82cf25ba", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: beb0dc26-1a3f-4f3d-accd-71abd8651dd0
+
+	annotation PBI_IncludeFutureArtifacts = False
+

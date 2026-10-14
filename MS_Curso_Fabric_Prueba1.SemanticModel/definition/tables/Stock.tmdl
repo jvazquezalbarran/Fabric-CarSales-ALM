@@ -1,0 +1,119 @@
+table Stock
+	lineageTag: 7e27ddd8-5ab7-4c13-b76f-a89c00d4fb61
+	sourceLineageTag: [dbo].[Stock]
+
+	column StockID
+		dataType: int64
+		formatString: 0
+		lineageTag: 87937fc6-3a6d-4708-aa44-716fb660203e
+		sourceLineageTag: StockID
+		summarizeBy: none
+		sourceColumn: StockID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Make
+		dataType: string
+		lineageTag: b5320c0a-cbe7-400d-8a80-f43fa4b71171
+		sourceLineageTag: Make
+		summarizeBy: none
+		sourceColumn: Make
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		dataType: string
+		lineageTag: ddb0f2f4-5715-467a-9041-d636227bf96b
+		sourceLineageTag: Model
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column ColorID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ffdca98-253c-47f7-b2a9-edac53f10c5d
+		sourceLineageTag: ColorID
+		summarizeBy: none
+		sourceColumn: ColorID
+
+		annotation SummarizationSetBy = Automatic
+
+	column VehicleType
+		dataType: string
+		lineageTag: 5e83156b-09df-4aaa-8de4-1a2299b5df1a
+		sourceLineageTag: VehicleType
+		summarizeBy: none
+		sourceColumn: VehicleType
+
+		annotation SummarizationSetBy = Automatic
+
+	column CostPrice
+		dataType: int64
+		formatString: 0
+		lineageTag: 590a236c-077f-4ee8-94a6-695eb2d8e3fc
+		sourceLineageTag: CostPrice
+		summarizeBy: sum
+		sourceColumn: CostPrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpareParts
+		dataType: int64
+		formatString: 0
+		lineageTag: 26a5d644-4aa1-42b1-ab6e-5a4dac201410
+		sourceLineageTag: SpareParts
+		summarizeBy: sum
+		sourceColumn: SpareParts
+
+		annotation SummarizationSetBy = Automatic
+
+	column LaborCost
+		dataType: int64
+		formatString: 0
+		lineageTag: 134f5909-4e2f-44b6-a7df-564fe100e99a
+		sourceLineageTag: LaborCost
+		summarizeBy: sum
+		sourceColumn: LaborCost
+
+		annotation SummarizationSetBy = Automatic
+
+	column Registration_Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 25ba7a7f-1727-4703-8491-20c9037a3514
+		sourceLineageTag: Registration_Date
+		summarizeBy: none
+		sourceColumn: Registration_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mileage
+		dataType: int64
+		formatString: 0
+		lineageTag: ab1a99a1-9aa5-4661-8f36-0ebdc647df35
+		sourceLineageTag: Mileage
+		summarizeBy: sum
+		sourceColumn: Mileage
+
+		annotation SummarizationSetBy = Automatic
+
+	column VehicleAgeInYears
+		dataType: double
+		lineageTag: 016f2fc2-c55e-472c-9aaf-63b2a59ad2f2
+		sourceLineageTag: VehicleAgeInYears
+		summarizeBy: sum
+		sourceColumn: VehicleAgeInYears
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Stock = entity
+		mode: directLake
+		source
+			entityName: Stock
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_Fabric_Curso_Prueba_JVA'
+

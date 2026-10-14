@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventhouse",
+    "displayName": "EH_CarSales_RealTime",
+    "description": "EH_CarSales_RealTime"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "89de7131-aab4-b498-47a8-fee08aeb198b"
+  }
+}

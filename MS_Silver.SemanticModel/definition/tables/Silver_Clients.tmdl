@@ -1,0 +1,132 @@
+table Silver_Clients
+	lineageTag: 1f628283-f7e1-4db5-8f3d-ee464737b1d4
+	sourceLineageTag: [dbo].[Silver_Clients]
+
+	column ClientID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2af7444a-de6b-4c88-a63f-2569062efa27
+		sourceLineageTag: ClientID
+		summarizeBy: count
+		sourceColumn: ClientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientName
+		dataType: string
+		lineageTag: 2b5b7dfb-2f42-4425-a4e2-86f8d7382a30
+		sourceLineageTag: ClientName
+		summarizeBy: none
+		sourceColumn: ClientName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address1
+		dataType: string
+		lineageTag: 7865d753-628e-46b5-8320-9dce6c17bac4
+		sourceLineageTag: Address1
+		summarizeBy: none
+		sourceColumn: Address1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address2
+		dataType: string
+		lineageTag: 52795ded-f3f9-427e-9577-aaba9aa65372
+		sourceLineageTag: Address2
+		summarizeBy: none
+		sourceColumn: Address2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Town
+		dataType: string
+		lineageTag: d98528ce-021e-4f55-9b3f-109e6eb2a7b3
+		sourceLineageTag: Town
+		summarizeBy: none
+		sourceColumn: Town
+
+		annotation SummarizationSetBy = Automatic
+
+	column County
+		dataType: string
+		lineageTag: 5cd2a07b-d3af-4bb5-91c1-85df0cb382ab
+		sourceLineageTag: County
+		summarizeBy: none
+		sourceColumn: County
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: c8688590-ef8c-4fdd-8370-81a0b76543d8
+		sourceLineageTag: Region
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column OuterPostode
+		dataType: string
+		lineageTag: a20524a9-025f-4e97-bdcd-354c214d60e2
+		sourceLineageTag: OuterPostode
+		summarizeBy: none
+		sourceColumn: OuterPostode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryID
+		dataType: int64
+		formatString: 0
+		lineageTag: 82d59242-8797-46cb-8a15-7a4f485d360f
+		sourceLineageTag: CountryID
+		summarizeBy: count
+		sourceColumn: CountryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientType
+		dataType: string
+		lineageTag: 887a48eb-97da-4faa-9a4c-3f88f4a65d70
+		sourceLineageTag: ClientType
+		summarizeBy: none
+		sourceColumn: ClientType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientSize
+		dataType: string
+		lineageTag: 4ac618bb-23ca-4c46-b41d-5903e67bf4d2
+		sourceLineageTag: ClientSize
+		summarizeBy: none
+		sourceColumn: ClientSize
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCreditWorthy
+		dataType: int64
+		formatString: 0
+		lineageTag: 568e9cb2-f3bb-4307-9192-165f7384db8d
+		sourceLineageTag: IsCreditWorthy
+		summarizeBy: sum
+		sourceColumn: IsCreditWorthy
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDealer
+		dataType: int64
+		formatString: 0
+		lineageTag: 38b18528-b0af-4ec6-b127-084d4be89cea
+		sourceLineageTag: IsDealer
+		summarizeBy: sum
+		sourceColumn: IsDealer
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Silver_Clients = entity
+		mode: directLake
+		source
+			entityName: Silver_Clients
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_Fabric_Curso_Prueba_JVA'
+

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLQueryset",
+    "displayName": "QS_Consultas_RealTime",
+    "description": "QS_Consultas_RealTime"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d134d1c9-956d-9192-487f-c5239bf2a98e"
+  }
+}

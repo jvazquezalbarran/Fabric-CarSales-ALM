@@ -1,0 +1,81 @@
+table Silver_Invoices
+	lineageTag: 657c92a3-842a-4b15-a782-80572ac206ad
+	sourceLineageTag: [dbo].[Silver_Invoices]
+
+	column InvoiceID
+		dataType: int64
+		formatString: 0
+		lineageTag: e50f0e10-a093-4c68-8ab0-dce3418de1bb
+		sourceLineageTag: InvoiceID
+		summarizeBy: count
+		sourceColumn: InvoiceID
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceNumber
+		dataType: string
+		lineageTag: 86851d34-55d8-4039-ac21-9479d02f3563
+		sourceLineageTag: InvoiceNumber
+		summarizeBy: none
+		sourceColumn: InvoiceNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientID
+		dataType: int64
+		formatString: 0
+		lineageTag: fc53816b-c0bd-442c-a73e-24249277ef96
+		sourceLineageTag: ClientID
+		summarizeBy: count
+		sourceColumn: ClientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5e33f150-399e-4256-b04e-9cdcc569c128
+		sourceLineageTag: InvoiceDate
+		summarizeBy: none
+		sourceColumn: InvoiceDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalDiscount
+		dataType: double
+		lineageTag: 16913623-caf9-4c4f-a957-cfa21bf01d3f
+		sourceLineageTag: TotalDiscount
+		summarizeBy: sum
+		sourceColumn: TotalDiscount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DeliveryCharge
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d47640d-5dd7-4bb1-9605-5272ad2bd639
+		sourceLineageTag: DeliveryCharge
+		summarizeBy: sum
+		sourceColumn: DeliveryCharge
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 00f6d8a5-76ef-4f9d-84ac-3e257f5fe435
+		sourceLineageTag: InvoiceDateKey
+		summarizeBy: count
+		sourceColumn: InvoiceDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Silver_Invoices = entity
+		mode: directLake
+		source
+			entityName: Silver_Invoices
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_Fabric_Curso_Prueba_JVA'
+

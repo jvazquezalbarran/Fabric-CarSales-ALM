@@ -1,0 +1,64 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "DF_Curso_Prueba_JVA",
+  "queryGroups": [],
+  "documentLocale": "es-ES",
+  "queriesMetadata": {
+    "Clients": {
+      "queryId": "edd3858b-cf13-47b5-b9f1-3fac39fe242f",
+      "queryName": "Clients",
+      "loadEnabled": false
+    },
+    "Colors": {
+      "queryId": "7b324cf8-91f6-416c-83b0-6e538a1ea736",
+      "queryName": "Colors",
+      "loadEnabled": false
+    },
+    "Countries": {
+      "queryId": "ec0f0d0a-aaea-4fa2-a4c6-b3ee3da71df7",
+      "queryName": "Countries",
+      "loadEnabled": false
+    },
+    "Stock": {
+      "queryId": "31e19d90-4e5e-41ad-8d4e-646889265d15",
+      "queryName": "Stock",
+      "loadEnabled": false
+    },
+    "Invoices": {
+      "queryId": "a0c9ea1b-222a-454d-bbf6-d51cf94f07d9",
+      "queryName": "Invoices",
+      "loadEnabled": false
+    },
+    "InvoiceLines": {
+      "queryId": "d38623aa-7101-497a-99ae-d2be33615892",
+      "queryName": "InvoiceLines",
+      "loadEnabled": false
+    },
+    "DateDimension": {
+      "queryId": "2fe541cc-b9f6-400d-bd2d-c2b3b8763b38",
+      "queryName": "DateDimension",
+      "loadEnabled": false
+    },
+    "DefaultDestination": {
+      "queryId": "d72d26bf-635f-487c-809a-7576b527ec28",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://tajamar365-my.sharepoint.com/personal/javier_vazquez_tajamar365_com/",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"127cdb1e-1214-419c-89d3-647283596101\",\"DatasourceId\":\"2282fbdf-f9c7-4b93-a905-e17f2354af26\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"127cdb1e-1214-419c-89d3-647283596101\",\"DatasourceId\":\"54078206-2502-4d98-b32d-d49656d6b140\"}"
+    }
+  ]
+}

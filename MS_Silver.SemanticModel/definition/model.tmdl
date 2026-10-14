@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DirectLake - LH_Fabric_Curso_Prueba_JVA"]
+
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb"]
+
+ref table Silver_Clients
+ref table Silver_Colors
+ref table Silver_Countries
+ref table Silver_DateDimension
+ref table Silver_InvoiceLines
+ref table Silver_Invoices
+ref table Silver_Stock
+
