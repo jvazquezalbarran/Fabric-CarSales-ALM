@@ -1,0 +1,30 @@
+table Colors
+	lineageTag: 8957f1c2-1aa7-4e21-9be8-34b8183d736a
+	sourceLineageTag: [dbo].[Colors]
+
+	column ColorID
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e94e7af-8fce-41fd-8f89-2c41f9e81b63
+		sourceLineageTag: ColorID
+		summarizeBy: none
+		sourceColumn: ColorID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		lineageTag: ba9bde5f-abb5-4d41-9571-186377a3df5a
+		sourceLineageTag: Color
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Colors = entity
+		mode: directLake
+		source
+			entityName: Colors
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_CarSales'
+

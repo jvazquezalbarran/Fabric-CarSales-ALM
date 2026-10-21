@@ -1,0 +1,24 @@
+relationship 677f4b81-4dce-cc52-37e5-05922073dc25
+	fromColumn: Invoices.ClientID
+	toColumn: Clients.ClientID
+
+relationship f1868faf-db1f-3823-798f-f2b3eccea074
+	fromColumn: InvoiceLines.InvoiceID
+	toColumn: Invoices.InvoiceID
+
+relationship ab7a09c4-6fbb-4ee1-6a6f-4c57a7b7d964
+	fromColumn: InvoiceLines.StockID
+	toColumn: Stock.StockID
+
+relationship 9d420182-dfa7-64d8-b3fb-91af5177d0bd
+	fromColumn: Stock.ColorID
+	toColumn: Colors.ColorID
+
+relationship 7d4de49f-fa5a-5f4e-8f7b-95540894c691
+	fromColumn: Clients.CountryID
+	toColumn: Countries.CountryID
+
+relationship 86d7b64a-cee6-78b0-d38b-946401943f87
+	fromColumn: Invoices.InvoiceDate
+	toColumn: DateDimension.DateKey
+

@@ -1,0 +1,100 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "DF_CarSales_Ingestion",
+  "queryGroups": [],
+  "documentLocale": "es-ES",
+  "queriesMetadata": {
+    "Clients": {
+      "queryId": "3c637e06-7540-463a-a0f7-d1c889aa400e",
+      "queryName": "Clients",
+      "loadEnabled": false
+    },
+    "Colors": {
+      "queryId": "565e0c7e-ad1c-4b9e-802b-d853c5154833",
+      "queryName": "Colors",
+      "loadEnabled": false
+    },
+    "Countries": {
+      "queryId": "c029d636-fc45-474b-a9ca-ee0cf2331678",
+      "queryName": "Countries",
+      "loadEnabled": false
+    },
+    "Stock": {
+      "queryId": "a8e36624-bbb0-457e-8fab-b7da51be5453",
+      "queryName": "Stock",
+      "loadEnabled": false
+    },
+    "Invoices": {
+      "queryId": "783a71f4-6bac-42c0-93e0-6830b22cfd09",
+      "queryName": "Invoices",
+      "loadEnabled": false
+    },
+    "InvoiceLines": {
+      "queryId": "eecb35ad-d981-46ac-8522-24cb65601883",
+      "queryName": "InvoiceLines",
+      "loadEnabled": false
+    },
+    "DateDimension": {
+      "queryId": "cd8178d4-4454-4f86-93c5-48e8a8427a7a",
+      "queryName": "DateDimension",
+      "loadEnabled": false
+    },
+    "Clients_DataDestination": {
+      "queryId": "1ea9880e-daa4-47df-842a-ab32b04eea85",
+      "queryName": "Clients_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Colors_DataDestination": {
+      "queryId": "9223fe6e-8d9c-4562-9451-96c638abe443",
+      "queryName": "Colors_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Countries_DataDestination": {
+      "queryId": "a4e2a3ba-b9f3-4aa5-8e96-bee017bed1ca",
+      "queryName": "Countries_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Stock_DataDestination": {
+      "queryId": "5ab11173-9fa8-4cda-b723-2a803f01cf61",
+      "queryName": "Stock_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Invoices_DataDestination": {
+      "queryId": "63b463fd-5708-476d-a715-6c186c7b17a9",
+      "queryName": "Invoices_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "InvoiceLines_DataDestination": {
+      "queryId": "16ccd46d-d654-45ac-9ad4-84d38aa33fee",
+      "queryName": "InvoiceLines_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "DateDimension_DataDestination": {
+      "queryId": "be0d51b0-6d18-43b0-b405-d388fd30fe1f",
+      "queryName": "DateDimension_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://tajamar365-my.sharepoint.com/personal/javier_vazquez_tajamar365_com/",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"127cdb1e-1214-419c-89d3-647283596101\",\"DatasourceId\":\"4ef06f17-1d41-4c01-8c83-20d271fdce87\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"127cdb1e-1214-419c-89d3-647283596101\",\"DatasourceId\":\"54078206-2502-4d98-b32d-d49656d6b140\"}"
+    }
+  ]
+}

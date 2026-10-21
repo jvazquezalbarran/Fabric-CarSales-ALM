@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "DW_CarSales_Gold ",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9d3fb37e-c849-9f8c-441b-468b99995a42"
+  }
+}

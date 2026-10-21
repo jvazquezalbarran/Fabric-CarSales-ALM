@@ -1,0 +1,61 @@
+table InvoiceLines
+	lineageTag: 42dea703-c3f5-4e42-9d46-1fc96b17c9ff
+	sourceLineageTag: [dbo].[InvoiceLines]
+
+	column InvoiceLineID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d275f21-685d-44d0-97dc-2b6b246b1c5c
+		sourceLineageTag: InvoiceLineID
+		summarizeBy: count
+		sourceColumn: InvoiceLineID
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceID
+		dataType: int64
+		formatString: 0
+		lineageTag: f9514c72-ffa4-406d-99e5-36f57e1aef9a
+		sourceLineageTag: InvoiceID
+		summarizeBy: none
+		sourceColumn: InvoiceID
+
+		annotation SummarizationSetBy = Automatic
+
+	column StockID
+		dataType: int64
+		formatString: 0
+		lineageTag: f2be0a4f-bcc5-48de-8211-3fadf1d4117a
+		sourceLineageTag: StockID
+		summarizeBy: none
+		sourceColumn: StockID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalePrice
+		dataType: int64
+		formatString: 0
+		lineageTag: 48f2bdea-ff08-452e-ab9a-dd72649fd324
+		sourceLineageTag: SalePrice
+		summarizeBy: sum
+		sourceColumn: SalePrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineItem
+		dataType: int64
+		formatString: 0
+		lineageTag: ea64756b-95ff-4c33-b002-6a98dd97370c
+		sourceLineageTag: LineItem
+		summarizeBy: sum
+		sourceColumn: LineItem
+
+		annotation SummarizationSetBy = Automatic
+
+	partition InvoiceLines = entity
+		mode: directLake
+		source
+			entityName: InvoiceLines
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_CarSales'
+

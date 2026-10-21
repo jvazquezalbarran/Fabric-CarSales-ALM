@@ -1,0 +1,52 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "e8c209d7-4815-9ec2-4181-d2c793bfe240",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "executeMashupQueriesOnly": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Ejecutar_Ingesta_CarSales",
+        "dependsOn": []
+      },
+      {
+        "type": "Office365Email",
+        "typeProperties": {
+          "body": "<p>El proceso diario de carga hacia el Lakehouse <em><strong>LH CarSales </strong></em>ha finalizado correctamente</p>",
+          "to": "jhondoe@conttoso.com",
+          "subject": "[CarSalesData] Ingesta realizada con éxito."
+        },
+        "externalReferences": {
+          "connection": "e938e21b-a3c8-4116-817e-8d07277f4aba"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "IngestaDatos_Notificacion",
+        "dependsOn": [
+          {
+            "activity": "Ejecutar_Ingesta_CarSales",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

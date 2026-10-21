@@ -1,0 +1,9 @@
+expression 'DirectLake - LH_CarSales' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/2d2d33ff-e9f9-4841-8338-00d92d31494e/2261b36e-aed7-4d00-9166-d2095f325af6", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: 21d29cbf-9da6-4879-9ac5-179beb7bae14
+
+	annotation PBI_IncludeFutureArtifacts = False
+

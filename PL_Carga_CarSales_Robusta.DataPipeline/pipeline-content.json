@@ -4,7 +4,7 @@
       {
         "type": "RefreshDataflow",
         "typeProperties": {
-          "dataflowId": "888b843e-e13b-8b3c-49df-14b514cdc814",
+          "dataflowId": "e8c209d7-4815-9ec2-4181-d2c793bfe240",
           "workspaceId": "00000000-0000-0000-0000-000000000000",
           "notifyOption": "NoNotification",
           "dataflowType": "DataflowFabric",
@@ -21,14 +21,16 @@
         "dependsOn": []
       },
       {
-        "type": "Office365Email",
+        "type": "MicrosoftTeams",
         "typeProperties": {
-          "body": "<p>Ha ido todo bien</p>",
-          "to": "jvazquez@ucm.es",
-          "subject": "✅ [ÉXITO] Carga CarSalesData completada"
+          "content": "<p><strong>EXITO CargaSalesData completada</strong></p>\n<p>El flujo de datos se ha ejecutado correctamente y el Lakehouse está actualizado</p>\n<p><br></p>",
+          "teamId": "f711294f-1abc-4e2b-8471-a72bfd80ac9c",
+          "channelId": "19:34a16ec3e9b94a9a9fd8ffd0288ac576@thread.tacv2",
+          "operationType": "SendMessageInChannel",
+          "subject": ""
         },
         "externalReferences": {
-          "connection": "e938e21b-a3c8-4116-817e-8d07277f4aba"
+          "connection": "1db663a1-3dc5-431d-a29a-96cd871caae0"
         },
         "policy": {
           "timeout": "0.12:00:00",
@@ -48,14 +50,15 @@
         ]
       },
       {
-        "type": "Office365Email",
+        "type": "MicrosoftTeams",
         "typeProperties": {
-          "body": "<p>Atención Ha ocurrido un error al ejecutar el DataFlow de CarSalesData. Revisa la ejecucion del fabric</p>",
-          "to": "jvazquez@ucm.es",
-          "subject": "[ERROR] Fallo en la carga de CarSalesData"
+          "content": "<p><strong>ERROR fallo en la carga de CarSalesData</strong></p>\n<p>atencion: Ha ocurrido un error al ejecutar el DataFlow de CarSalesData. Revisa la ejecucion en Fabric</p>",
+          "teamId": "f711294f-1abc-4e2b-8471-a72bfd80ac9c",
+          "channelId": "19:34a16ec3e9b94a9a9fd8ffd0288ac576@thread.tacv2",
+          "operationType": "SendMessageInChannel"
         },
         "externalReferences": {
-          "connection": "e938e21b-a3c8-4116-817e-8d07277f4aba"
+          "connection": "1db663a1-3dc5-431d-a29a-96cd871caae0"
         },
         "policy": {
           "timeout": "0.12:00:00",
@@ -64,7 +67,7 @@
           "secureInput": false,
           "secureOutput": false
         },
-        "name": "Notificacion_Error",
+        "name": "Notificacion Error",
         "dependsOn": [
           {
             "activity": "Ingesta_CarSales",

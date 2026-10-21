@@ -1,0 +1,7 @@
+role Rol_Alemania
+	modelPermission: read
+
+	tablePermission Countries = [CountryName] == "Germany"
+
+	annotation PBI_Id = cb21928c0b0849cda6af85dc6708cc1b
+
