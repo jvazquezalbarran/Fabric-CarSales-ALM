@@ -1,0 +1,4 @@
+relationship 57cd95f9-5105-1235-a502-6f9445b340a1
+	fromColumn: Fact_Ventas.FacturaID
+	toColumn: Dim_Cliente.ClienteID
+

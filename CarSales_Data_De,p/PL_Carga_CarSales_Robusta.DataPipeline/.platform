@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "PL_Carga_CarSales_Robusta"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5a55930f-f8cd-997b-4f03-c3e594a4bb23"
+  }
+}

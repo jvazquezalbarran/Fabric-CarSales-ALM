@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "LH_CarSales"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b5a2c983-31f9-9a2b-4ed5-79557646a8b0"
+  }
+}

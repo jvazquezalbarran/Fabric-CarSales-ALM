@@ -1,0 +1,123 @@
+table Clients
+	lineageTag: d8201c03-0561-4960-b9b0-ee9b211ce76c
+	sourceLineageTag: [dbo].[Clients]
+
+	column ClientID
+		dataType: int64
+		formatString: 0
+		lineageTag: e21336de-bfbf-4f8f-85e6-51586595b657
+		sourceLineageTag: ClientID
+		summarizeBy: none
+		sourceColumn: ClientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientName
+		dataType: string
+		lineageTag: 8535a455-f337-4b4a-b037-42de51294076
+		sourceLineageTag: ClientName
+		summarizeBy: none
+		sourceColumn: ClientName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address1
+		dataType: string
+		lineageTag: dbaaff4c-93a5-4b8a-b79e-16ea9ffa73a1
+		sourceLineageTag: Address1
+		summarizeBy: none
+		sourceColumn: Address1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Town
+		dataType: string
+		lineageTag: 04501cdf-b706-4238-b464-eafb5fec8582
+		sourceLineageTag: Town
+		summarizeBy: none
+		sourceColumn: Town
+
+		annotation SummarizationSetBy = Automatic
+
+	column County
+		dataType: string
+		lineageTag: 739ce8ba-cf67-4fe3-9317-ceda39a659b8
+		sourceLineageTag: County
+		summarizeBy: none
+		sourceColumn: County
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: b820fddb-9424-4bc9-a427-8f5e7de445a5
+		sourceLineageTag: Region
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column OuterPostode
+		dataType: string
+		lineageTag: de7d653d-82ad-4186-898b-b2073f730ff8
+		sourceLineageTag: OuterPostode
+		summarizeBy: none
+		sourceColumn: OuterPostode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryID
+		dataType: int64
+		formatString: 0
+		lineageTag: f313750f-13a1-4880-a650-f1d0681b2bde
+		sourceLineageTag: CountryID
+		summarizeBy: none
+		sourceColumn: CountryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientType
+		dataType: string
+		lineageTag: f27b9f6a-1df2-4c0f-bf14-9b078cf73f66
+		sourceLineageTag: ClientType
+		summarizeBy: none
+		sourceColumn: ClientType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientSize
+		dataType: string
+		lineageTag: 033ae6cd-718d-4652-9b13-0f6db763ac4a
+		sourceLineageTag: ClientSize
+		summarizeBy: none
+		sourceColumn: ClientSize
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCreditWorthy
+		dataType: int64
+		formatString: 0
+		lineageTag: def97345-4a54-44a3-a092-d3dfdf160d63
+		sourceLineageTag: IsCreditWorthy
+		summarizeBy: sum
+		sourceColumn: IsCreditWorthy
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDealer
+		dataType: int64
+		formatString: 0
+		lineageTag: 977aadc5-4669-44b4-86e5-5a8b8b7f129b
+		sourceLineageTag: IsDealer
+		summarizeBy: sum
+		sourceColumn: IsDealer
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Clients = entity
+		mode: directLake
+		source
+			entityName: Clients
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_CarSales'
+

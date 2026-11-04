@@ -1,0 +1,55 @@
+table Dim_Cliente
+	lineageTag: 703b0d79-7cf2-463c-abc7-803aa82cd9c7
+	sourceLineageTag: [dbo].[Dim_Cliente]
+
+	column ClienteID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 9d16b6d2-f527-4d60-b44c-c8def5bc6ad5
+		sourceLineageTag: ClienteID
+		summarizeBy: none
+		sourceColumn: ClienteID
+
+		annotation SummarizationSetBy = Automatic
+
+	column NombreCliente
+		dataType: string
+		sourceProviderType: varchar(150)
+		lineageTag: 7ec3b49b-6eaa-48c7-a857-3b97e93a6c15
+		sourceLineageTag: NombreCliente
+		summarizeBy: none
+		sourceColumn: NombreCliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Direccion
+		dataType: string
+		sourceProviderType: varchar(255)
+		lineageTag: 6d63cfa4-82fe-4f17-a3bf-23a843f0dec4
+		sourceLineageTag: Direccion
+		summarizeBy: none
+		sourceColumn: Direccion
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaisID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a337ae8f-9954-4d25-b629-f195797c6268
+		sourceLineageTag: PaisID
+		summarizeBy: none
+		sourceColumn: PaisID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Cliente = entity
+		mode: directLake
+		source
+			entityName: Dim_Cliente
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

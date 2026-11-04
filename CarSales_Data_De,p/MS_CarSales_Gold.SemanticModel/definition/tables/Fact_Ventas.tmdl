@@ -1,0 +1,47 @@
+table Fact_Ventas
+	lineageTag: 0a7bd75c-57ca-4205-a580-2b9419915a5c
+	sourceLineageTag: [dbo].[Fact_Ventas]
+
+	column FacturaID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1bd37d01-1a88-4bad-9e71-ae1f83814041
+		sourceLineageTag: FacturaID
+		summarizeBy: none
+		sourceColumn: FacturaID
+
+		annotation SummarizationSetBy = Automatic
+
+	column VehiculoID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 06b25c22-4012-4c12-89e8-8d2162c925c8
+		sourceLineageTag: VehiculoID
+		summarizeBy: count
+		sourceColumn: VehiculoID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrecioVenta
+		dataType: double
+		sourceProviderType: decimal(18, 2)
+		lineageTag: fee13f44-a057-42e8-8720-488bf6ff7f46
+		sourceLineageTag: PrecioVenta
+		summarizeBy: sum
+		sourceColumn: PrecioVenta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Fact_Ventas = entity
+		mode: directLake
+		source
+			entityName: Fact_Ventas
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

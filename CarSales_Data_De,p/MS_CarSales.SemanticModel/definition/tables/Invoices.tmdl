@@ -1,0 +1,81 @@
+table Invoices
+	lineageTag: a9a5af20-4453-4c50-ac74-3088955bf041
+	sourceLineageTag: [dbo].[Invoices]
+
+	column InvoiceID
+		dataType: int64
+		formatString: 0
+		lineageTag: 9fed6a82-379f-4244-9f53-82653662c086
+		sourceLineageTag: InvoiceID
+		summarizeBy: none
+		sourceColumn: InvoiceID
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceNumber
+		dataType: string
+		lineageTag: e527b347-65cf-4330-9d09-f7963186510d
+		sourceLineageTag: InvoiceNumber
+		summarizeBy: none
+		sourceColumn: InvoiceNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientID
+		dataType: int64
+		formatString: 0
+		lineageTag: 1cd2557a-6bed-4c4b-a8e6-743432e55d19
+		sourceLineageTag: ClientID
+		summarizeBy: none
+		sourceColumn: ClientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c97cb4f0-24e7-4ca7-b4dc-0847b8f97e75
+		sourceLineageTag: InvoiceDate
+		summarizeBy: none
+		sourceColumn: InvoiceDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalDiscount
+		dataType: double
+		lineageTag: 16b41329-7046-4ce0-84fa-ee5b277124a0
+		sourceLineageTag: TotalDiscount
+		summarizeBy: sum
+		sourceColumn: TotalDiscount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DeliveryCharge
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c09c66e-8363-4429-9e0e-77eb96e193c4
+		sourceLineageTag: DeliveryCharge
+		summarizeBy: sum
+		sourceColumn: DeliveryCharge
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 4615c1ab-7407-474d-acd4-9fe247316f75
+		sourceLineageTag: InvoiceDateKey
+		summarizeBy: count
+		sourceColumn: InvoiceDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Invoices = entity
+		mode: directLake
+		source
+			entityName: Invoices
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_CarSales'
+

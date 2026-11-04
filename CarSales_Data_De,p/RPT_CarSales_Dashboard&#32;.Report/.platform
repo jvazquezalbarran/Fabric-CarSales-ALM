@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "RPT_CarSales_Dashboard "
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "43992e5a-2774-a609-40fa-47b7b9372c53"
+  }
+}
