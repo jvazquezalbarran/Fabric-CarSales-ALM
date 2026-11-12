@@ -1,0 +1,40 @@
+table Fact_Ventas
+	lineageTag: 1418e62e-9133-4d61-88ae-3f8f18296526
+	sourceLineageTag: 0a7bd75c-57ca-4205-a580-2b9419915a5c
+
+	column FacturaID
+		dataType: int64
+		lineageTag: 03d43a66-13d3-4a23-8d9a-ab5402cea96e
+		sourceLineageTag: 1bd37d01-1a88-4bad-9e71-ae1f83814041
+		sourceColumn: FacturaID
+
+	column VehiculoID
+		dataType: int64
+		lineageTag: 2f5845fe-e770-4a27-a4a5-cfd5ba43500b
+		sourceLineageTag: 06b25c22-4012-4c12-89e8-8d2162c925c8
+		sourceColumn: VehiculoID
+
+	column PrecioVenta
+		dataType: double
+		lineageTag: 6da304c2-61a3-4010-8ce2-d549e2816259
+		sourceLineageTag: fee13f44-a057-42e8-8720-488bf6ff7f46
+		sourceColumn: PrecioVenta
+
+	partition Fact_Ventas-partition = entity
+		mode: directQuery
+		source
+			entityName: Fact_Ventas
+			expressionSource: 'DirectQuery to AS - c89e37dd-8869-4353-bf44-8628edb4e3e2/860ca41c-44ff-49ed-b4ba-65cbab3bd7ff'
+
+		annotation ONT_WorkspaceId = c89e37dd-8869-4353-bf44-8628edb4e3e2
+
+		annotation ONT_ItemId = 860ca41c-44ff-49ed-b4ba-65cbab3bd7ff
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = MS_CarSales_Gold
+
+		annotation ONT_WorkspaceName = Fabric_Curso_Demo_JVA
+
+		annotation ONT_PinnedAtUtc = 2026-11-11T09:49:56.8294148+00:00
+

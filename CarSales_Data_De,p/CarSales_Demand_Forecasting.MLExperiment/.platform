@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "MLExperiment",
+    "displayName": "CarSales_Demand_Forecasting",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "265b9028-4456-b512-4f3d-b3be2a68fd07"
+  }
+}

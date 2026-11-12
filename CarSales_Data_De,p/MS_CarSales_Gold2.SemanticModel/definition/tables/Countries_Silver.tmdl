@@ -1,0 +1,39 @@
+table Countries_Silver
+	lineageTag: bc147c58-ac26-44f5-9f08-162b2c71faaa
+	sourceLineageTag: [dbo].[Countries_Silver]
+
+	column CountryID
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ae37403-1bce-4734-8de6-2f1ae2807f94
+		sourceLineageTag: CountryID
+		summarizeBy: none
+		sourceColumn: CountryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryName
+		dataType: string
+		lineageTag: 1a36685c-f70c-4903-a907-d31dd20fa4be
+		sourceLineageTag: CountryName
+		summarizeBy: none
+		sourceColumn: CountryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryISOCode
+		dataType: string
+		lineageTag: 4a2744c3-a38b-4cbc-9604-b2f656a854ef
+		sourceLineageTag: CountryISOCode
+		summarizeBy: none
+		sourceColumn: CountryISOCode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Countries_Silver = entity
+		mode: directLake
+		source
+			entityName: Countries_Silver
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_CarSales'
+

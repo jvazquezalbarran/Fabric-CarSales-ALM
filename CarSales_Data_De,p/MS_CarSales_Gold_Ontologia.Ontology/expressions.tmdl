@@ -1,0 +1,9 @@
+expression 'DirectQuery to AS - c89e37dd-8869-4353-bf44-8628edb4e3e2/860ca41c-44ff-49ed-b4ba-65cbab3bd7ff' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/WORKSPACE_NAME_PLACEHOLDER", "MS_CarSales_Gold"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: cc80c6cf-514b-45a6-9f34-72ee17c32cbe
+

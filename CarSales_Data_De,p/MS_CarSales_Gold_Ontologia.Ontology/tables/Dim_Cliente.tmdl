@@ -1,0 +1,46 @@
+table Dim_Cliente
+	lineageTag: 40102ab6-4321-4ecc-9ee1-f94e3360f0eb
+	sourceLineageTag: 703b0d79-7cf2-463c-abc7-803aa82cd9c7
+
+	column ClienteID
+		dataType: int64
+		lineageTag: 1764045b-e492-4784-a038-913d9b43b122
+		sourceLineageTag: 9d16b6d2-f527-4d60-b44c-c8def5bc6ad5
+		sourceColumn: ClienteID
+
+	column NombreCliente
+		dataType: string
+		lineageTag: 7cf6cbba-805f-4323-b9cf-5a5150e89c81
+		sourceLineageTag: 7ec3b49b-6eaa-48c7-a857-3b97e93a6c15
+		sourceColumn: NombreCliente
+
+	column Direccion
+		dataType: string
+		lineageTag: b0a4cb45-f942-4173-9d52-b0cd7c5eef8c
+		sourceLineageTag: 6d63cfa4-82fe-4f17-a3bf-23a843f0dec4
+		sourceColumn: Direccion
+
+	column PaisID
+		dataType: int64
+		lineageTag: c456b9d3-6e4f-44ef-9e34-823a37695890
+		sourceLineageTag: a337ae8f-9954-4d25-b629-f195797c6268
+		sourceColumn: PaisID
+
+	partition Dim_Cliente-partition = entity
+		mode: directQuery
+		source
+			entityName: Dim_Cliente
+			expressionSource: 'DirectQuery to AS - c89e37dd-8869-4353-bf44-8628edb4e3e2/860ca41c-44ff-49ed-b4ba-65cbab3bd7ff'
+
+		annotation ONT_WorkspaceId = c89e37dd-8869-4353-bf44-8628edb4e3e2
+
+		annotation ONT_ItemId = 860ca41c-44ff-49ed-b4ba-65cbab3bd7ff
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = MS_CarSales_Gold
+
+		annotation ONT_WorkspaceName = Fabric_Curso_Demo_JVA
+
+		annotation ONT_PinnedAtUtc = 2026-11-11T09:49:56.8294148+00:00
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventstream",
+    "displayName": "ES_Sales_TPV_Stream"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b1d3428e-f1a5-ba92-4fd0-2b48d67ea7c5"
+  }
+}

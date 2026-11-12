@@ -1,0 +1,25 @@
+relationship 334eea70-5c17-d7a5-c6bd-79ac173c2f85
+	fromColumn: Invoices_Silver.ClientID
+	toColumn: Clients_Silver.ClientID
+
+relationship de414d7f-c174-cfaa-9586-e8fd6fc34929
+	fromColumn: InvoicesLines_Silver.InvoiceID
+	toColumn: Invoices_Silver.InvoiceID
+
+relationship 57928b38-00b3-453c-28fe-07cd7e810ba0
+	fromColumn: Stock_Silver.StockID
+	toColumn: InvoicesLines_Silver.StockID
+
+relationship 4a4021aa-7a61-1b97-4324-a156f5891e05
+	fromColumn: Stock_Silver.ColorID
+	toColumn: Colors_Silver.ColorID
+
+relationship 2ac1f5c7-add7-48fd-c9b4-755f3f89656e
+	fromColumn: Clients_Silver.CountryID
+	toColumn: Countries_Silver.CountryID
+
+relationship 9e793315-e587-b0d5-8b98-46c7a277b162
+	relyOnReferentialIntegrity
+	fromColumn: Invoices_Silver.InvoiceDate
+	toColumn: DateDimension_Silver.DateKey
+

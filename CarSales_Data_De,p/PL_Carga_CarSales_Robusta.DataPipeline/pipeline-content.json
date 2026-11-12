@@ -1,5 +1,127 @@
 {
   "properties": {
-    "activities": []
+    "activities": [
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "a842cbe9-0691-b851-4337-b19dfac42c46",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "notifyOption": "NoNotification",
+          "dataflowType": "DataflowFabric",
+          "executeMashupQueriesOnly": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Ingesta_CarSales",
+        "dependsOn": []
+      },
+      {
+        "type": "MicrosoftTeams",
+        "typeProperties": {
+          "content": "<p>EXITO Carga CarsalesData Completada</p>",
+          "teamId": "f711294f-1abc-4e2b-8471-a72bfd80ac9c",
+          "channelId": "19:6ff3b79e0cbd4b219ec26e83bf28b9d2@thread.tacv2",
+          "operationType": "SendMessageInChannel"
+        },
+        "externalReferences": {
+          "connection": "1db663a1-3dc5-431d-a29a-96cd871caae0"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Notificar_Exito",
+        "dependsOn": [
+          {
+            "activity": "Prediccion_Ventas_CarSales",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "MicrosoftTeams",
+        "typeProperties": {
+          "content": "<p>Error: Fallo en la carga de CArSalesData</p>",
+          "teamId": "f711294f-1abc-4e2b-8471-a72bfd80ac9c",
+          "channelId": "19:6ff3b79e0cbd4b219ec26e83bf28b9d2@thread.tacv2",
+          "operationType": "SendMessageInChannel"
+        },
+        "externalReferences": {
+          "connection": "1db663a1-3dc5-431d-a29a-96cd871caae0"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Notificacion_Error",
+        "dependsOn": [
+          {
+            "activity": "Ingesta_CarSales",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "bdfdea63-96ab-8fc8-4896-8b422251e04f",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "2_Procesar_PySpark_Silver",
+        "dependsOn": [
+          {
+            "activity": "Ingesta_CarSales",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "4eef8943-1b8e-91fa-42a4-70770b9ff855",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Prediccion_Ventas_CarSales",
+        "dependsOn": [
+          {
+            "activity": "2_Procesar_PySpark_Silver",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

@@ -1,0 +1,132 @@
+table Clients_Silver
+	lineageTag: df36804c-c86c-4b61-ab34-8ca35137ea8d
+	sourceLineageTag: [dbo].[Clients_Silver]
+
+	column ClientID
+		dataType: int64
+		formatString: 0
+		lineageTag: 73c6ab4d-3bf5-488f-9823-229d7002a98b
+		sourceLineageTag: ClientID
+		summarizeBy: none
+		sourceColumn: ClientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientName
+		dataType: string
+		lineageTag: 61195af0-d083-4707-8aa8-96af7aba1efb
+		sourceLineageTag: ClientName
+		summarizeBy: none
+		sourceColumn: ClientName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address1
+		dataType: string
+		lineageTag: 1d3a322d-b92d-495f-a89f-b2446af5b7bf
+		sourceLineageTag: Address1
+		summarizeBy: none
+		sourceColumn: Address1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address2
+		dataType: string
+		lineageTag: e7249049-f30d-4fb2-9912-0b0f00ab4da2
+		sourceLineageTag: Address2
+		summarizeBy: none
+		sourceColumn: Address2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Town
+		dataType: string
+		lineageTag: cc8abcc9-94be-4a2f-8e5b-6b1a560c738d
+		sourceLineageTag: Town
+		summarizeBy: none
+		sourceColumn: Town
+
+		annotation SummarizationSetBy = Automatic
+
+	column County
+		dataType: string
+		lineageTag: fed82007-79c7-479a-aeff-8d7d76e4c70a
+		sourceLineageTag: County
+		summarizeBy: none
+		sourceColumn: County
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 9f9a430a-2e07-4cba-8867-f9d1a2e7c862
+		sourceLineageTag: Region
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column OuterPostode
+		dataType: string
+		lineageTag: 6dc10a1c-1350-4742-b3b2-fd44eb60c6b3
+		sourceLineageTag: OuterPostode
+		summarizeBy: none
+		sourceColumn: OuterPostode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryID
+		dataType: int64
+		formatString: 0
+		lineageTag: 02e2d65f-fdad-4d93-bd88-19fa3935b5fa
+		sourceLineageTag: CountryID
+		summarizeBy: none
+		sourceColumn: CountryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientType
+		dataType: string
+		lineageTag: 1aee2494-1394-4652-9632-8d393ac4b6d9
+		sourceLineageTag: ClientType
+		summarizeBy: none
+		sourceColumn: ClientType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientSize
+		dataType: string
+		lineageTag: daae3abb-054f-468c-9903-65235b301b33
+		sourceLineageTag: ClientSize
+		summarizeBy: none
+		sourceColumn: ClientSize
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCreditWorthy
+		dataType: int64
+		formatString: 0
+		lineageTag: 11136ff1-cad7-4175-8c23-d19f41a90249
+		sourceLineageTag: IsCreditWorthy
+		summarizeBy: sum
+		sourceColumn: IsCreditWorthy
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDealer
+		dataType: int64
+		formatString: 0
+		lineageTag: 82ef6a63-42e8-4096-9fa4-b639ff3234b6
+		sourceLineageTag: IsDealer
+		summarizeBy: sum
+		sourceColumn: IsDealer
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Clients_Silver = entity
+		mode: directLake
+		source
+			entityName: Clients_Silver
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_CarSales'
+

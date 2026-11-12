@@ -1,0 +1,95 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "DF_Silver_CarSales2",
+  "queryGroups": [],
+  "documentLocale": "es-ES",
+  "queriesMetadata": {
+    "Clients xlsx": {
+      "queryId": "125a5a71-6c05-4731-98e8-b86715962f0a",
+      "queryName": "Clients xlsx",
+      "loadEnabled": false
+    },
+    "Colors xlsx": {
+      "queryId": "2a5290f6-1b52-4aba-9b07-cfb80cd1700b",
+      "queryName": "Colors xlsx",
+      "loadEnabled": false
+    },
+    "Countries xlsx": {
+      "queryId": "b72feaa0-fd09-4b2e-885d-ae557cfda98b",
+      "queryName": "Countries xlsx",
+      "loadEnabled": false
+    },
+    "DateDimension xlsx": {
+      "queryId": "5b588243-3d4d-42b9-901f-795ef52456de",
+      "queryName": "DateDimension xlsx",
+      "loadEnabled": false
+    },
+    "Invoices xlsx": {
+      "queryId": "c6ca79ad-4557-4007-8010-3699b41cbc6a",
+      "queryName": "Invoices xlsx",
+      "loadEnabled": false
+    },
+    "InvoicesLines xlsx": {
+      "queryId": "ffbd1095-a9f7-4e09-b860-895389175199",
+      "queryName": "InvoicesLines xlsx",
+      "loadEnabled": false
+    },
+    "Stock xlsx": {
+      "queryId": "845f2eca-1135-4b6d-ab13-77acd9f1f6b7",
+      "queryName": "Stock xlsx",
+      "loadEnabled": false
+    },
+    "Stock xlsx_DataDestination": {
+      "queryId": "e16a5dc4-087c-48f1-b2a5-f715b0eebc89",
+      "queryName": "Stock xlsx_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Clients xlsx_DataDestination": {
+      "queryId": "4a69b33d-e51c-4a15-afde-79a35e170fa3",
+      "queryName": "Clients xlsx_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Colors xlsx_DataDestination": {
+      "queryId": "231bee23-d6f4-4c2d-a70d-b301389958ba",
+      "queryName": "Colors xlsx_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Countries xlsx_DataDestination": {
+      "queryId": "eaf85280-41f2-4f38-95d5-124d53380a98",
+      "queryName": "Countries xlsx_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "DateDimension xlsx_DataDestination": {
+      "queryId": "227ecd0c-998c-40aa-8a8e-369ca2acfaa1",
+      "queryName": "DateDimension xlsx_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Invoices xlsx_DataDestination": {
+      "queryId": "9ff1c884-ea0c-4c6f-b662-a835c50fe516",
+      "queryName": "Invoices xlsx_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "InvoicesLines xlsx_DataDestination": {
+      "queryId": "8f355a42-7882-4184-ac58-2a64ca71e8fb",
+      "queryName": "InvoicesLines xlsx_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"127cdb1e-1214-419c-89d3-647283596101\",\"DatasourceId\":\"54078206-2502-4d98-b32d-d49656d6b140\"}"
+    }
+  ]
+}

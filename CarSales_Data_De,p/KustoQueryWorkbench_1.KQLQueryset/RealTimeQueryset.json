@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "48019242-178d-480f-927d-14a3b0fbbeff",
+        "clusterUri": "",
+        "type": "Fabric",
+        "databaseItemId": "8e03e95a-dd26-a27b-4c2b-472040422344"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "ba62f470-4a5a-4ca5-9493-7754b67b29fc",
+        "content": "// QS_Consultas_RealTime\n// 1. Ver las últimas 100 ventas que van entrando en tiempo real\nFacturasTiempoReal\n| take 100\n\n\n// 2. Transacciones/Eventos por minuto durante la última hora\nFacturasTiempoReal\n| where ingestion_time() > ago(1h)\n| summarize TotalBicicletas = sum(No_Bikes), TotalEventos = count() by bin(ingestion_time(), 1m)\n| render timechart\n\nFacturasTiempoReal\n| summarize BicicletasDisponibles = sum(No_Bikes) by bin(ingestion_time(), 1m)\n",
+        "title": "Tab",
+        "dataSourceId": "48019242-178d-480f-927d-14a3b0fbbeff"
+      }
+    ],
+    "querysetType": "Standalone"
+  }
+}

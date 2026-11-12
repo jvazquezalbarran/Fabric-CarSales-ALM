@@ -1,0 +1,6 @@
+relationship Fact_Ventas_to_Dim_Cliente
+	fromColumn: Fact_Ventas.FacturaID
+	toColumn: Dim_Cliente.ClienteID
+
+	annotation ONT_SourceRelationship = 57cd95f9-5105-1235-a502-6f9445b340a1
+

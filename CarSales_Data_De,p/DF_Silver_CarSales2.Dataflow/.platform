@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "DF_Silver_CarSales2"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5bc616be-8ec6-935e-4a55-aa0a94d370b7"
+  }
+}

@@ -1,0 +1,81 @@
+table Invoices_Silver
+	lineageTag: 76421819-8d1e-4bdb-b98a-7798f8c8689b
+	sourceLineageTag: [dbo].[Invoices_Silver]
+
+	column InvoiceID
+		dataType: int64
+		formatString: 0
+		lineageTag: df1bfb5b-2ad1-4f41-9bd8-86c201dbb5ff
+		sourceLineageTag: InvoiceID
+		summarizeBy: none
+		sourceColumn: InvoiceID
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceNumber
+		dataType: string
+		lineageTag: 7b103f88-cfe1-4252-8057-58c8e2968b51
+		sourceLineageTag: InvoiceNumber
+		summarizeBy: none
+		sourceColumn: InvoiceNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientID
+		dataType: int64
+		formatString: 0
+		lineageTag: 11d83f1c-3ddc-4dea-9530-52a4fc3537d4
+		sourceLineageTag: ClientID
+		summarizeBy: none
+		sourceColumn: ClientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 12e94a50-468c-4b03-ac7c-3655175867a8
+		sourceLineageTag: InvoiceDate
+		summarizeBy: none
+		sourceColumn: InvoiceDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalDiscount
+		dataType: double
+		lineageTag: f2ae30c7-588f-45ab-adc5-62f5c4dc1415
+		sourceLineageTag: TotalDiscount
+		summarizeBy: sum
+		sourceColumn: TotalDiscount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DeliveryCharge
+		dataType: int64
+		formatString: 0
+		lineageTag: d547e824-b296-4ffa-bd7a-d1921f42f7fe
+		sourceLineageTag: DeliveryCharge
+		summarizeBy: sum
+		sourceColumn: DeliveryCharge
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 81ebfa4e-cd2d-4d9a-b5a1-7967ad17b045
+		sourceLineageTag: InvoiceDateKey
+		summarizeBy: count
+		sourceColumn: InvoiceDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Invoices_Silver = entity
+		mode: directLake
+		source
+			entityName: Invoices_Silver
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_CarSales'
+

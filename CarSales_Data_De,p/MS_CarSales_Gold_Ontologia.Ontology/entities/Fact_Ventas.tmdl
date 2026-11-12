@@ -1,0 +1,26 @@
+/// Esta es la tabla donde voy a gestionar las Ventas de nuestro negocio
+entity Fact_Ventas
+	lineageTag: 4012f258-765e-46b7-bdd3-9f8bc6db0f51
+	backingTable: Fact_Ventas
+
+	property FacturaID
+		dataType: int64
+		lineageTag: 03d43a66-13d3-4a23-8d9a-ab5402cea96e
+
+		backingConfiguration
+			valueColumn: Fact_Ventas.FacturaID
+
+	property VehiculoID
+		dataType: int64
+		lineageTag: 2f5845fe-e770-4a27-a4a5-cfd5ba43500b
+
+		backingConfiguration
+			valueColumn: Fact_Ventas.VehiculoID
+
+	property PrecioVenta
+		dataType: double
+		lineageTag: 6da304c2-61a3-4010-8ce2-d549e2816259
+
+		backingConfiguration
+			valueColumn: Fact_Ventas.PrecioVenta
+

@@ -1,0 +1,9 @@
+model Model
+
+ref table Dim_Cliente
+ref table Fact_Ventas
+
+ref entity Fact_Ventas
+
+ref namespace default
+

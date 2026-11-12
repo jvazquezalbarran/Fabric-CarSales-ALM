@@ -1,0 +1,61 @@
+table InvoicesLines_Silver
+	lineageTag: 59979d84-01b5-442f-81e0-0b170c0ce672
+	sourceLineageTag: [dbo].[InvoicesLines_Silver]
+
+	column InvoiceLineID
+		dataType: int64
+		formatString: 0
+		lineageTag: 19692e14-4dc9-4dc1-b4f4-e0469dd62342
+		sourceLineageTag: InvoiceLineID
+		summarizeBy: count
+		sourceColumn: InvoiceLineID
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceID
+		dataType: int64
+		formatString: 0
+		lineageTag: e82a5712-2ffd-406b-a4e5-413d188effc9
+		sourceLineageTag: InvoiceID
+		summarizeBy: none
+		sourceColumn: InvoiceID
+
+		annotation SummarizationSetBy = Automatic
+
+	column StockID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ae5244d-cf1e-47e1-a7ff-b98309e18544
+		sourceLineageTag: StockID
+		summarizeBy: none
+		sourceColumn: StockID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalePrice
+		dataType: int64
+		formatString: 0
+		lineageTag: 5d8d1a88-ec3e-48c0-a778-0dffa9ad026d
+		sourceLineageTag: SalePrice
+		summarizeBy: sum
+		sourceColumn: SalePrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineItem
+		dataType: int64
+		formatString: 0
+		lineageTag: 2db68a52-d96b-42bc-9e7c-afbaae099e4b
+		sourceLineageTag: LineItem
+		summarizeBy: sum
+		sourceColumn: LineItem
+
+		annotation SummarizationSetBy = Automatic
+
+	partition InvoicesLines_Silver = entity
+		mode: directLake
+		source
+			entityName: InvoicesLines_Silver
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_CarSales'
+
